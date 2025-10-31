@@ -1,5 +1,6 @@
 package com.example.questuserinput_016.ui.theme
 
+import android.R.attr.elevation
 import androidx.compose.animation.core.withInfiniteAnimationFrameMillis
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -11,6 +12,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.material3.Button
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.CheckboxDefaults.colors
 import androidx.compose.material3.Divider
 import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.MaterialTheme
@@ -109,14 +111,18 @@ fun FormDataDiri(modifier: Modifier)
             color = Color.DarkGray
         )
 
-        ElevatedCard {
+        ElevatedCard (
             elevation = CardDefaults.cardElevation(defaultElevation = 10.dp),
             colors = CardDefaults.cardColors(containerColor = Color.Black),
             modifier = Modifier
                 .height(100.dp)
                 .width(300.dp)
-        } {
-
+        ) {
+            Column (modifier = Modifier.padding(horizontal = 5.dp, vertical = 15.dp),){
+                Text(text = "Nama : " +nama, color = Color.White)
+                Text(text = "Gender : " +jenis, color = Color.White)
+                Text(text = "Alamat : " +alamat, color = Color.White)
+            }
         }
 
     }
