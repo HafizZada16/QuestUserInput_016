@@ -11,6 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.questuserinput_016.ui.theme.FormDataDiri
 import com.example.questuserinput_016.ui.theme.QuestUserInput_016Theme
 
 class MainActivity : ComponentActivity() {
@@ -20,8 +21,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             QuestUserInput_016Theme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
+                    FormDataDiri(
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
