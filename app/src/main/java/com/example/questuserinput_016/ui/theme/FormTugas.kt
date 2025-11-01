@@ -15,7 +15,7 @@ import androidx.compose.ui.unit.dp
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Forminput() {
+fun FormTampilan() {
     val gradientBrush = Brush.verticalGradient(
         colors = listOf(Color(0xFFE0F7FA), Color(0xFFA5D6A7), Color(0xFFC8E6C9))
     )
@@ -29,7 +29,13 @@ fun Forminput() {
                 .padding(16.dp),
             contentAlignment = Alignment.Center
         ) {
-            RegistrationForm()
+            FormRegistrasi()
         }
     }
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun FormRegistrasi() {
+
 }
