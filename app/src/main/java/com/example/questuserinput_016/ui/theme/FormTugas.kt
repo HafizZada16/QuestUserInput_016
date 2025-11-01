@@ -5,6 +5,7 @@ import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.widget.DatePicker
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -15,9 +16,13 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.DateRange
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.SegmentedButtonDefaults.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.derivedStateOf
@@ -130,8 +135,22 @@ fun FormRegistrasi() {
         Spacer(modifier = Modifier.height(16.dp))
 
         OutlinedTextField(
-            value = tanggalLahir
+            value = tanggalLahir,
+            onValueChange = { },
+            label = { Text("Tanggal Lahir") },
+            readOnly = true,
+            trailingIcon = {
+                Icon(
+                    imageVector = Icons.Default.DateRange,
+                    contentDescription = "Pilih Tanggal",
+                    modifier = Modifier.clickable { datePickerDialog.show() }
+                )
+            },
+            modifier = Modifier
+                .fillMaxWidth()
+                .clickable { datePickerDialog.show() }
         )
+        Spacer(modifier = Modifier.height(16.dp))
     }
 
 }
