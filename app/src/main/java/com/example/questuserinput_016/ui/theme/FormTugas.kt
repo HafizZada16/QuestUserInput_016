@@ -220,7 +220,11 @@ fun FormRegistrasi() {
                     Text("Jenis Kelamin: $jenisKelamin")
                 }
             },
-
+            confirmButton = {
+                Button(onClick = {showSuccessDialog = false}) {
+                    Text("OK")
+                }
+            }
         )
     }
 }
