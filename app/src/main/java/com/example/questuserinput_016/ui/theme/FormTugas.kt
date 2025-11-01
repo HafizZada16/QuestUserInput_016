@@ -98,7 +98,7 @@ fun FormRegistrasi() {
         context,
         { _: DatePicker, year: Int, month: Int, dayOfMonth: Int ->
             val selectedDate = LocalDate.of(year, month + 1, dayOfMonth)
-            tanggalLahir = selectedDate.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")))
+            tanggalLahir = selectedDate.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))
             umur = calculateAge(selectedDate).toString()
         },
         calendar.get(Calendar.YEAR),
