@@ -1,6 +1,6 @@
 package com.example.questuserinput_016.ui.theme
 
-import android.R
+
 import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.widget.DatePicker
@@ -44,10 +44,11 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.core.i18n.DateTimeFormatter
 import java.time.LocalDate
 import java.time.Period
+import java.time.format.DateTimeFormatter
 import java.util.Calendar
+
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -97,7 +98,7 @@ fun FormRegistrasi() {
         context,
         { _: DatePicker, year: Int, month: Int, dayOfMonth: Int ->
             val selectedDate = LocalDate.of(year, month + 1, dayOfMonth)
-            tanggalLahir = selectedDate.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))
+            tanggalLahir = selectedDate.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")))
             umur = calculateAge(selectedDate).toString()
         },
         calendar.get(Calendar.YEAR),
@@ -233,3 +234,4 @@ fun FormRegistrasi() {
 fun calculateAge(birthDate: LocalDate): Int {
     return Period.between(birthDate, LocalDate.now()).years
 }
+
