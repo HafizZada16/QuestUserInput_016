@@ -27,7 +27,6 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.SegmentedButtonDefaults.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.derivedStateOf
@@ -52,7 +51,7 @@ import java.util.Calendar
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun FormTampilan() {
+fun FormTampilan(modifier: Modifier) {
     val gradientBrush = Brush.verticalGradient(
         colors = listOf(Color(0xFFE0F7FA), Color(0xFFA5D6A7), Color(0xFFC8E6C9))
     )
