@@ -60,7 +60,6 @@ fun FormRegistrasi() {
     var showSuccessDialog by rememberSaveable { mutableStateOf(false) }
     val context = LocalContext.current
 
-    // --- Bagian 2: Validasi ---
     val isFormValid by derivedStateOf {
         nama.isNotBlank() &&
                 kotaAsal.isNotBlank() &&
@@ -69,7 +68,18 @@ fun FormRegistrasi() {
                 isSetuju
     }
 
-
+    val calendar = Calendar.getInstance()
+    val datePickerDialog = DatePickerDialog(
+        context,
+        { _: DatePicker, year: Int, month: Int, dayOfMonth: Int ->
+            val selectedDate = LocalDate.of(year, month + 1, dayOfMonth)
+            tanggalLahir = selectedDate.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))
+            umur = calculateAge(selectedDate).toString()
+        },
+        calendar.get(Calendar.YEAR),
+        calendar.get(Calendar.MONTH),
+        calendar.get(Calendar.DAY_OF_MONTH)
+    )
 
 }
 
