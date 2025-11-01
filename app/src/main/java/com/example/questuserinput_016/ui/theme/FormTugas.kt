@@ -19,6 +19,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.DateRange
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.Checkbox
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -206,6 +207,22 @@ fun FormRegistrasi() {
         }
     }
 
+    if (showSuccessDialog) {
+        AlertDialog(
+            onDismissRequest = {showSuccessDialog = false},
+            title = {Text("Berhasil")},
+            text = {
+                Column {
+                    Text("Nama: $nama")
+                    Text("Kota Asal: $kotaAsal")
+                    Text("Tgl Lahir: $tanggalLahir")
+                    Text("Umur: $umur")
+                    Text("Jenis Kelamin: $jenisKelamin")
+                }
+            },
+
+        )
+    }
 }
 
 fun calculateAge(selectedDate: LocalDate) {}
