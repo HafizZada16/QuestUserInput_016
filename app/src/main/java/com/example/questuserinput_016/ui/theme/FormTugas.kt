@@ -112,6 +112,15 @@ fun FormRegistrasi() {
         Spacer(modifier = Modifier.height(24.dp))
 
         OutlinedTextField(
+            value = nama,
+            onValueChange = { nama = it },
+            label = { Text("Nama Lengkap") },
+            modifier = Modifier.fillMaxWidth(),
+            singleLine = true
+        )
+        Spacer(modifier = Modifier.height(16.dp))
+
+        OutlinedTextField(
             value = kotaAsal,
             onValueChange = { kotaAsal = it },
             label = { Text("Kota Asal") },
@@ -119,6 +128,10 @@ fun FormRegistrasi() {
             singleLine = true
         )
         Spacer(modifier = Modifier.height(16.dp))
+
+        OutlinedTextField(
+            value = tanggalLahir
+        )
     }
 
 }
