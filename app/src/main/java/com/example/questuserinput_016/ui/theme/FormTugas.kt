@@ -16,6 +16,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -109,6 +110,15 @@ fun FormRegistrasi() {
             color = Color.DarkGray
         )
         Spacer(modifier = Modifier.height(24.dp))
+
+        OutlinedTextField(
+            value = kotaAsal,
+            onValueChange = { kotaAsal = it },
+            label = { Text("Kota Asal") },
+            modifier = Modifier.fillMaxWidth(),
+            singleLine = true
+        )
+        Spacer(modifier = Modifier.height(16.dp))
     }
 
 }
