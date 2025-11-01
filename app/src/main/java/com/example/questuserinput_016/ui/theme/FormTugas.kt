@@ -151,6 +151,16 @@ fun FormRegistrasi() {
                 .clickable { datePickerDialog.show() }
         )
         Spacer(modifier = Modifier.height(16.dp))
+
+        OutlinedTextField(
+            value = umur,
+            onValueChange = { },
+            label = { Text("Umur") },
+            modifier = Modifier.fillMaxWidth(),
+            readOnly = true,
+            enabled = false
+        )
+        Spacer(modifier = Modifier.height(16.dp))
     }
 
 }
