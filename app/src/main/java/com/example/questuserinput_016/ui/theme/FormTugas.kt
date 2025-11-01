@@ -8,6 +8,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -21,6 +22,7 @@ import androidx.compose.material.icons.filled.DateRange
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SegmentedButtonDefaults.Icon
 import androidx.compose.material3.Text
@@ -161,6 +163,23 @@ fun FormRegistrasi() {
             enabled = false
         )
         Spacer(modifier = Modifier.height(16.dp))
+
+        Text("Jenis Kelamin", modifier = Modifier.fillMaxWidth(), color = Color.Gray)
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            jenisKelaminOptions.forEach { option ->
+                RadioButton(
+                    selected = (jenisKelamin == option),
+                    onClick = { jenisKelamin = option }
+                )
+                Text(text = option, modifier = Modifier.padding(end = 16.dp))
+            }
+        }
+        Spacer(modifier = Modifier.height(16.dp))
+
+        
     }
 
 }
