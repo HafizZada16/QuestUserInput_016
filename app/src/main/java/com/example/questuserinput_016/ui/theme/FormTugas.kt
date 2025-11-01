@@ -1,5 +1,8 @@
 package com.example.questuserinput_016.ui.theme
 
+import android.annotation.SuppressLint
+import android.app.DatePickerDialog
+import android.widget.DatePicker
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -7,6 +10,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
@@ -17,6 +21,9 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
+import androidx.core.i18n.DateTimeFormatter
+import java.time.LocalDate
+import java.util.Calendar
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -39,6 +46,7 @@ fun FormTampilan() {
     }
 }
 
+@SuppressLint("UnrememberedMutableState")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun FormRegistrasi() {
@@ -52,5 +60,17 @@ fun FormRegistrasi() {
     var showSuccessDialog by rememberSaveable { mutableStateOf(false) }
     val context = LocalContext.current
 
+    // --- Bagian 2: Validasi ---
+    val isFormValid by derivedStateOf {
+        nama.isNotBlank() &&
+                kotaAsal.isNotBlank() &&
+                tanggalLahir.isNotBlank() &&
+                jenisKelamin.isNotBlank() &&
+                isSetuju
+    }
+
+
 
 }
+
+fun calculateAge(selectedDate: LocalDate) {}
