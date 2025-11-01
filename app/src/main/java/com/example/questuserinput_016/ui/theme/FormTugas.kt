@@ -19,6 +19,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.DateRange
+import androidx.compose.material3.Checkbox
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedTextField
@@ -179,7 +180,19 @@ fun FormRegistrasi() {
         }
         Spacer(modifier = Modifier.height(16.dp))
 
-        
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .clickable { isSetuju = !isSetuju },
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Checkbox(
+                checked = isSetuju,
+                onCheckedChange = { isSetuju = it }
+            )
+            Text("Saya setuju dengan syarat dan ketentuan yang berlaku")
+        }
+        Spacer(modifier = Modifier.height(24.dp))
     }
 
 }
