@@ -46,6 +46,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.i18n.DateTimeFormatter
 import java.time.LocalDate
+import java.time.Period
 import java.util.Calendar
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -229,4 +230,6 @@ fun FormRegistrasi() {
     }
 }
 
-fun calculateAge(selectedDate: LocalDate) {}
+fun calculateAge(birthDate: LocalDate): Int {
+    return Period.between(birthDate, LocalDate.now()).years
+}
